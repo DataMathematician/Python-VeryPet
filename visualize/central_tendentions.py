@@ -45,6 +45,12 @@ def mode(xs: List[float]) -> List[float]:
     max_count = max(counts.values())
     return [xs_i for xs_i,count in counts.items() if count == max_count]
 
+def mean_reduce(xs:List[float], p:float) -> float:
+    '''Mean reduce value'''
+    pct_reduce = int(len(xs) * p)
+    xs = xs[pct_reduce:-pct_reduce]
+    return mean(xs)
+
 if __name__ == '__main__':
     print("mean:\t\t",mean(prices))
     print("min:\t\t",l_min(prices))
@@ -52,3 +58,4 @@ if __name__ == '__main__':
     print("median:\t\t",median(prices))
     print("quantile:\t",quantile(prices,0.75))
     print("mode:\t\t",mode(prices))
+    print("mean reduce:\t\t",mean_reduce(prices,0.1))
