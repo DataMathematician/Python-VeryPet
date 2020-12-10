@@ -45,10 +45,10 @@ def mode(xs: List[float]) -> List[float]:
     max_count = max(counts.values())
     return [xs_i for xs_i,count in counts.items() if count == max_count]
 
-
-print("mean:\t\t",mean(prices))
-print("min:\t\t",l_min(prices))
-print("max:\t\t",l_max(prices))
-print("median:\t\t",median(prices))
-print("quantile:\t",quantile(prices,0.75))
-print("mode:\t\t",mode(prices))
+if __name__ == '__main__':
+    print("mean:\t\t",mean(prices))
+    print("min:\t\t",l_min(prices))
+    print("max:\t\t",l_max(prices))
+    print("median:\t\t",median(prices))
+    print("quantile:\t",quantile(prices,0.75))
+    print("mode:\t\t",mode(prices))
